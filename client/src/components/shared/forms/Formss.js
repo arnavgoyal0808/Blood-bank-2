@@ -36,7 +36,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
 
           <div className='form-check ms-2'>
             <input type="radio" className="form-check-input" name='role' id="adminRadio"
-              value="Admin" checked={role === "Admin"} onChange={(e) => setRole(e.target.value)} />
+              value="admin" checked={role === "admin"} onChange={(e) => setRole(e.target.value)} />
             <label htmlFor='adminRadio' className='form-check-label'>
               Admin
             </label>
@@ -44,7 +44,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
 
           <div className='form-check ms-2'>
             <input type="radio" className="form-check-input" name='role' id="hospitalRadio"
-              value="Hospital" checked={role === "Hospital"} onChange={(e) => setRole(e.target.value)} />
+              value="hospital" checked={role === "hospital"} onChange={(e) => setRole(e.target.value)} />
             <label htmlFor='hospitalRadio' className='form-check-label'>
               Hospital
             </label>
@@ -52,7 +52,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
 
           <div className='form-check ms-2'>
             <input type="radio" className="form-check-input" name='role' id="organisationRadio"
-              value="Organisation" checked={role === "Organisation"} onChange={(e) => setRole(e.target.value)} />
+              value="organisation" checked={role === "organisation"} onChange={(e) => setRole(e.target.value)} />
             <label htmlFor='organisationRadio' className='form-check-label'>
               Organisation
             </label>
@@ -98,7 +98,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
     />
-    {(role === 'donar' || role === 'Admin') && (
+    {(role === 'donar' || role === 'admin') && (
       <InputType
         Labeltext="Name"
         Labelfor="registerName"
@@ -108,7 +108,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
         onChange={(e) => setName(e.target.value)}
       />
     )}
-    {role === 'Organisation' && (
+    {role === 'organisation' && (
       <InputType
         Labeltext="Organisation Name"
         Labelfor="registerOrganisationName"
@@ -118,7 +118,7 @@ const Form = ({ FormType, submitButton, formTitle }) => {
         onChange={(e) => setOrganisationName(e.target.value)}
       />
     )}
-    {role === 'Hospital' && (
+    {role === 'hospital' && (
       <InputType
         Labeltext="Hospital Name"
         Labelfor="registerHospitalName"
@@ -157,9 +157,9 @@ const Form = ({ FormType, submitButton, formTitle }) => {
 
 <div className="d-flex flex-row justify-content-between">
           {FormType === 'Login' ? (
-            <p>Not registered yet? Register <Link to="/Register">Here!</Link></p>
+            <p>Not registered yet? Register <Link to="/register">Here!</Link></p>
           ) : (
-            <p>Already a user? Please <Link to="/Login">Login!</Link></p>
+            <p>Already a user? Please <Link to="/login">Login!</Link></p>
           )}
           <button className="btn btn-primary" type="submit">
             {submitButton}

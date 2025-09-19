@@ -61,9 +61,9 @@ export const userRegister = createAsyncThunk(
 );
 export const getCurrentUser = createAsyncThunk(
     'auth/getCurrentUser',
-    async ({rejectWithValue}) =>{
+    async (_, {rejectWithValue}) =>{
         try {
-            const res = await API.get('auth/current-user')
+            const res = await API.get('/auth/current-user')
             if(res?.data){
                 return res?.data
 

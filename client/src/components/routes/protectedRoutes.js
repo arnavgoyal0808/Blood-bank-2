@@ -9,7 +9,7 @@ const ProtectedRoutes = ({ children }) => {
 
   const getUser = async () => {
     try {
-      const { data } = await API.get('auth/current-user');
+      const { data } = await API.get('/auth/current-user');
       if (data?.success) {
         dispatch(getCurrentUser(data));
       }
@@ -21,7 +21,7 @@ const ProtectedRoutes = ({ children }) => {
 
   useEffect(() => {
     getUser();
-  }, []); // Add an empty dependency array to run the effect only once on mount
+  }, []);
 
   if (localStorage.getItem('token')) {
     return children;

@@ -5,7 +5,7 @@ const token = localStorage.getItem('token') ? localStorage.getItem('token') : nu
 const initialState = {
     loading: false,
     user: null,
-    token : null,
+    token,
     error: null,
   };
 
@@ -22,7 +22,7 @@ const initialState = {
       })
       builder.addCase(userLogin.fulfilled ,(state , {payload}) =>{
         state.loading = false;
-        state.existingUser = payload.existingUser;
+        state.user = payload.existingUser;
         state.token = payload.token;
       });
       builder.addCase(userLogin.rejected ,(state ,{payload}) =>{
